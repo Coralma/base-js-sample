@@ -1,0 +1,19 @@
+{
+  "name": "base-js-sample",
+  "version": "1.0.0",
+  "description": "some basic sample for javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coralma/base-js-sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coralma/base-js-sample/issues"
+  },
+  "homepage": "https://github.com/Coralma/base-js-sample#readme"
+}

@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Coralma/base-js-sample/issues"
   },
-  "homepage": "https://github.com/Coralma/base-js-sample#readme"
+  "homepage": "https://github.com/Coralma/base-js-sample#readme",
+  "dependencies": {
+    "angular": "^1.6.9",
+    "decimal": "0.0.2",
+    "jquery": "^3.3.1"
+  }
 }

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<style>
+    .fix-table-head {
+        display: none;
+        position: fixed;
+        top: 0;
+        width: 1382px;
+        background-color: #fff;
+    }
+</style>
+<body>
+<div id="title" style="height: 300px;background-color: #d3e3ee">
+    <h1>Title</h1>
+</div>
+<div id="h1" class="fix-table-head">
+    <table width="100%" border="1">
+        <colgroup>
+            <col width="10%" />
+            <col width="10%" />
+            <col width="20%" />
+            <col width="20%" />
+            <col width="30%" />
+            <col width="10%" />
+        </colgroup>
+        <tr>
+            <th>ID</th><th>姓名</th><th>性别</th><th>年龄</th><th>主修</th><th>成绩</th>
+        </tr>
+    </table>
+</div>
+
+<div id="t1">
+    <table width="100%" border="1">
+        <colgroup>
+            <col width="10%" />
+            <col width="10%" />
+            <col width="20%" />
+            <col width="20%" />
+            <col width="30%" />
+            <col width="10%" />
+        </colgroup>
+        <tr>
+            <th>ID</th><th>姓名</th><th>性别</th><th>年龄</th><th>主修</th><th>成绩</th>
+        </tr>
+        <tr>
+            <td>1</td><td>Coral</td><td>男</td><td>22</td><td>计算机科学与应用</td><td>100</td>
+        </tr>
+        <tr>
+            <td>2</td><td>Nut</td><td>男</td><td>25</td><td>计算机科学与应用</td><td>67</td>
+        </tr>
+        <tr>
+            <td>3</td><td>Cathy</td><td>男</td><td>32</td><td>计算机科学与应用</td><td>77</td>
+        </tr>
+        <tr>
+            <td>4</td><td>Ruby</td><td>男</td><td>42</td><td>计算机科学与应用</td><td>89</td>
+        </tr>
+        <tr>
+            <td>5</td><td>Jimmy</td><td>男</td><td>25</td><td>计算机科学与应用</td><td>87</td>
+        </tr>
+        <tr>
+            <td>6</td><td>Tony</td><td>男</td><td>22</td><td>计算机科学与应用</td><td>81</td>
+        </tr>
+        <tr>
+            <td>7</td><td>Leo</td><td>男</td><td>27</td><td>计算机科学与应用</td><td>45</td>
+        </tr>
+        <tr>
+            <td>8</td><td>Andy</td><td>男</td><td>22</td><td>计算机科学与应用</td><td>62</td>
+        </tr>
+        <tr>
+            <td>9</td><td>Jerry</td><td>男</td><td>23</td><td>计算机科学与应用</td><td>84</td>
+        </tr>
+        <tr>
+            <td>10</td><td>Tom</td><td>男</td><td>28</td><td>计算机科学与应用</td><td>72</td>
+        </tr>
+    </table>
+</div>
+
+<div id="s1" style="height: 600px;background-color: #d5eed8">
+    <h1>Section 1</h1>
+</div>
+<div id="s2" style="height: 600px;background-color: #fffddb">
+    <h1>Section 2</h1>
+</div>
+<div id="s3" style="height: 600px;background-color: #eaddee">
+    <h1>Section 3</h1>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            var scrollHeight = $(document).scrollTop();
+            var tableHeight = $('#t1').offset().top;
+            var s1Height = $('#s1').offset().top - 50;
+            console.log('body scroll event, doc height: ' + scrollHeight + ', t1 height:' + tableHeight + '， s1 height:'+ s1Height);
+            if(scrollHeight>tableHeight) {
+                $("#h1").css("display","inline");
+            } else {
+                $("#h1").css("display","none");
+            }
+            if(scrollHeight>s1Height) {
+                $("#h1").css("display","none");
+            }
+        });
+    });
+</script>
+</body>
+</html>

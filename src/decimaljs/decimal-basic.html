@@ -11,7 +11,9 @@
     // 文档请见http://mikemcl.github.io/decimal.js/
     //基本用法
     console.log("加法 0.14 + 0.17 = " + Decimal.add(0.14, 0.17));
-    console.log("减法 0.64 + 0.23 = " + Decimal.sub(0.64, 0.23));
+    console.log("连加 0.14 + 0.17 + 0.34 + 0.11 = " + Decimal.add(0.14, 0.17).add(0.34).add(0.11));
+    console.log("减法 0.64 - 0.23 = " + Decimal.sub(0.64, 0.23));
+    console.log("连减 0.64 - 0.23 - 0.11 - (-1.12)= " + Decimal.sub(0.64, 0.23).sub(0.11).sub(-1.12));
     console.log("乘法 0.35 * 0.38 = " + Decimal.mul(0.35, 0.38));
     console.log("乘法(保留两位小数) 0.35 * 0.38 = " + Decimal.mul(0.35, 0.38).toFixed(2));
     console.log("除法 0.45 * 0.27 = " + Decimal.div(0.45, 0.27));
@@ -20,9 +22,30 @@
     // 数学方法
     console.log("取绝对值 -0.1 = " + Decimal.abs(-0.1));
     console.log("取最大值 -55, 10, 25 = " + Decimal.max(-55, 10, 25));
-    for(i=0; i < 100; i++) {
-        console.log(Decimal.random(10).toString());
-    }
+    // 数学判断
+    var c1 = new Decimal(100), c2 = new Decimal(Infinity);
+    console.log("判断是否是无限数: 100 为 " + c1.isFinite());
+    console.log("判断是否是无限数: Infinity 为 " + c2.isFinite());
+    var c3 = new Decimal(100), c4 = new Decimal(12.34);
+    console.log("判断是否为整形: 1 为 " + c3.isInt());
+    console.log("判断是否为整形: 12.34 为 " + c4.isInt());
+    var c5 = new Decimal(100), c6 = new Decimal(NaN);
+    console.log("判断是否为NaN: 100 为 " + c5.isNaN());
+    console.log("判断是否为NaN: NaN 为 " + c6.isNaN());
+    var c7 = new Decimal(-100), c8 = new Decimal(100);
+    console.log("判断是否为负值: -100 为 " + c7.isNeg());
+    console.log("判断是否为负值: 100 为 " + c8.isNeg());
+    var c9 = new Decimal(-100), c10 = new Decimal(100);
+    console.log("判断是否为正值: -100 为 " + c9.isPos());
+    console.log("判断是否为正值: 100 为 " + c10.isPos());
+    var c11 = new Decimal(0), c12 = new Decimal(100);
+    console.log("判断是否为零: 0 为 " + c11.isZero());
+    console.log("判断是否为零: 100 为 " + c12.isZero());
+    var c13 = new Decimal(10), c14 = new Decimal(100), c15 = new Decimal(10);
+    console.log("判断数字大小: 10 小于 100 " + c13.lt(c14));
+    console.log("判断数字大小: 10 小于等于 10 " + c13.lte(c15));
+    console.log("判断数字大小: 10 大于 100 " + c13.gt(c14));
+    console.log("判断数字大小: 10 大于等于 10 " + c13.gte(c15));
 </script>
 </body>
 </html>

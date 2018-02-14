@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Exception Sample</title>
+ <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<p></p>
+<script>
+
+    window.onerror= handleError;
+
+    function handleError(msg, url, l) {
+        var txt="There was an error on this page.\n\n";
+        txt+="Error: " + msg + "\n";
+        txt+="URL: " + url + "\n";
+        txt+="Line: " + l + "\n\n";
+        txt+="Click OK to continue.\n\n";
+        alert(txt);
+        return false;
+    }
+
+    var result = abc/efg;
+
+</script>
+</body>
+</html>

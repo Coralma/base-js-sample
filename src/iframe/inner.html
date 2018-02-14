@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>a frame which receive the message</title>
+    <script>
+        var OnMessage = function (e) {
+            alert(e.data);
+        };
+        function init() {
+            if (window.addEventListener) {  // all browsers except IE before version 9
+                window.addEventListener("message", OnMessage, false);
+            } else {
+                if (window.attachEvent) {   // IE before version 9
+                    window.attachEvent("onmessage", OnMessage);
+                }
+            }
+        };
+        init();
+    </script>
+</head>
+<body>
+    <p>a iframe to receive the message</p>
+</body>
+</html>

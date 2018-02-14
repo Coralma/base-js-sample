@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>operate the iframe on other domain</title>
+    <script>
+        function sendMessage(){
+            var frm = document.getElementById("iframe1");
+            frm.contentWindow.postMessage("hello","*")
+        }
+    </script>
+</head>
+<body>
+<input id="send" type="button" onclick="sendMessage()" value="send message" />
+<br />
+<iframe style="width:300px; height:400px;" id="iframe1" src="inner.html">
+</iframe>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>拖动</title>
+    <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../node_modules/jquery-ui/build/"></script>
+    <!--<script type="text/javascript" src="./js/jquery-ui-1.8.14.custom/js/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui-1.8.14.custom/js/jquery-ui-1.8.14.custom.min.js"></script>-->
+    <style type="text/css">
+        #draggable
+        {
+            width: 800px;
+            height: 600px;
+            padding: 0.5em;
+            background-color:blue;
+            border: solid 1px blue;
+        }
+        .containerdiv
+        {
+            width: 90%;
+            height: 90%;
+            background-color:Gray;
+            border: 1px solid #ddd;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("#draggable").draggable();
+        });
+    </script>
+</head>
+<body id="demos" style="height:100%;">
+<div class="containerdiv" style="overflow: hidden; position: absolute;">
+    <div>
+        <div style="position: relative;" id="draggable">
+            <p>
+                Drag me around</p>
+            <iframe src="http://www.weibo.com" style="width:100%;height:100%;"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>
